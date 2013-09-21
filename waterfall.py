@@ -25,7 +25,7 @@ def Waterfall( df,
               bar_color = '#082583',
               neg_color = 'red',
               plc = "g--",
-              plwidth = 3,
+              plwidth = 2,
               fig_size = (15.5, 9),
               tfont_size = 25,
               axfont_size = 20,
@@ -62,7 +62,7 @@ def Waterfall( df,
         "#188487",
         "#E24A33"
       ],
-      "axes.facecolor": "#eeeeee",
+      "axes.facecolor": "#eeeeee",  
       "axes.labelsize": "large",
       "axes.grid": true,
       "patch.edgecolor": "#eeeeee",
@@ -107,8 +107,6 @@ def Waterfall( df,
     
     grid(grid_val)
     
-    
-    
     if toplabel:
         autolabel(rects1)
         
@@ -119,4 +117,4 @@ def Waterfall( df,
 
 if __name__ == "__main__":
     df = pandas.ExcelFile('test.xls').parse("Sheet1")
-    Waterfall( df, fig_size=(8,6),xticks_fontsize=9, outfile="temp.png" )
+    Waterfall( df, fig_size=(11,6),xticks_fontsize=9, outfile="temp.png" )
