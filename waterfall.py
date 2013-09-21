@@ -9,8 +9,6 @@ from pylab import *
 from matplotlib import rc_params
 from pandas import *
 
-
-
 def Waterfall( df, xkcd=False, outfile = 'temp.png'):
     if xkcd: 
         plt.xkcd()
