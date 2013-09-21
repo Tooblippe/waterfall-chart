@@ -9,6 +9,14 @@ from pylab import *
 from matplotlib import rc_params
 from pandas import *
 
+def autolabel(rects):
+    # attach some text labels
+    #http://matplotlib.org/examples/api/barchart_demo.html
+    for rect in rects:
+        height = rect.get_height()
+        text(rect.get_x()+rect.get_width()/2., 1.05*height, '%d'%int(height),
+                ha='right', va='bottom')
+                
 def Waterfall( df, 
               plot_title="Waterfall",
               plot_X = "xname",
@@ -25,6 +33,7 @@ def Waterfall( df,
               xticks_fontsize = 15,
               grid_val = True,
               xkcd=False, 
+              toplabel = True,
               outfile = 'temp.png'):
     
     if xkcd: 
@@ -84,7 +93,8 @@ def Waterfall( df,
     title(plot_title,fontsize=tfont_size)
     xlabel(plot_X,fontsize=axfont_size)
     ylabel(plot_Y, fontsize=axfont_size)
-    bar(xpos,sumvalues,align='center',width=bar_width,color=bar_color)
+    
+    rects1 = bar(xpos,sumvalues,align='center',width=bar_width,color=bar_color)
     bar(xpos,blanks,color='#eeeeee',edgecolor='#eeeeee',align='center',width=bar_width)
     
     bar(xpos,neg_h,align='center',width=bar_width,color=neg_color)
@@ -100,9 +110,11 @@ def Waterfall( df,
     if outfile:    
         savefig(outfile,dpi=200,bbox_inces="Tight")
     
+    if toplabel:
+        autolabel(rects1)
     show()
 
 
 if __name__ == "__main__":
     df = pandas.ExcelFile('test.xls').parse("Sheet1")
-    Waterfall( df, fig_size=(8,6),xticks_fontsize=9 )
+    Waterfall( df, fig_size=(8,6),xticks_fontsize=9, outfile="temp.png" )
