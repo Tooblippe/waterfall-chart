@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>waterfall.py by Tooblippe</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>waterfall.py</h1>
+        <p>A waterfall chart implementation in python and Excel DataNitro</p>
+
+        <p class="view"><a href="https://github.com/Tooblippe/waterfall">View the Project on GitHub <small>Tooblippe/waterfall</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/Tooblippe/waterfall/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/Tooblippe/waterfall/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/Tooblippe/waterfall">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="waterfallpy" class="anchor" href="#waterfallpy"><span class="octicon octicon-link"></span></a>waterfall.py</h1>
+
+<p>Simple function that implements a waterfall chart in python. I have not  been able to find any decent implementation of a waterfall chart online and implementing it in Excel is neither trivial nor pretty. </p>
+
+<h1>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>usage</h1>
+
+<p>This implementation is still very basic as I needed it fairly quickly</p>
+
+<p>Ir reads an Excel file into a pandas dataframe. YOu can obviously hard code your data.The file format currently is very simple. Some of the axis names and chart heading is still hard coded. </p>
+
+<table>
+<thead><tr>
+<th>Item</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Tomatos</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Potatos</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Gas</td>
+<td>90</td>
+</tr>
+<tr>
+<td>Correction</td>
+<td>-10</td>
+</tr>
+<tr>
+<td>Unplanned</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Stuff</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Other Stuff</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Foo</td>
+<td>10</td>
+</tr>
+</tbody>
+</table><p>Edit the following lines to point to an Excel file with the data. The waterfall() function is called with the parsed Excel file pandas dataframe.</p>
+
+<pre><code>df = pandas.ExcelFile('test.xls').parse("Sheet1")
+Waterfall( df )
+</code></pre>
+
+<p><img src="https://raw.github.com/Tooblippe/waterfall/master/temp.png" alt="waterfall"></p>
+
+<h1>
+<a name="custom-matplotlib" class="anchor" href="#custom-matplotlib"><span class="octicon octicon-link"></span></a>custom matplotlib</h1>
+
+<p>The function makes small modifications to the Matplotlib config file and also sets the default size to someting that should be easy to copy and paste to powerpoint.</p>
+
+<h1>
+<a name="implementing-in-datanitro" class="anchor" href="#implementing-in-datanitro"><span class="octicon octicon-link"></span></a>implementing in DataNitro</h1>
+
+<p>I am busy porting this to a <a href="https://datanitro.com/">DataNitro</a> function. This will mean that you would be able to create a chart in excel using the python extension and calling  something similar to the following in excel as you would call any normal Excel function:</p>
+
+<pre><code>= waterfall("A1:Ax,B1:Bx")
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/Tooblippe">Tooblippe</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
