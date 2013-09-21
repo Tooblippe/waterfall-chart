@@ -1,11 +1,11 @@
 # waterfall.py
 
-Simple function that implements a waterfall chart in python. I have not relay been able to find any decent implementation of a waterfall chart online and implementing it in Excel is neither trivial or pretty
+Simple function that implements a waterfall chart in python. I have not  been able to find any decent implementation of a waterfall chart online and implementing it in Excel is neither trivial nor pretty. 
 
 #usage
 This implementation is still very basic as I needed it fairly quickly
 
-The file format currently is very simple. Some of the axis names and chart heading is still hard coded. 
+Ir reads an Excel file into a pandas dataframe. YOu can obviously hard code your data.The file format currently is very simple. Some of the axis names and chart heading is still hard coded. 
 
 Item  | Value
 -----  |  ------
