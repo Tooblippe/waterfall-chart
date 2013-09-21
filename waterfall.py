@@ -107,11 +107,13 @@ def Waterfall( df,
     
     grid(grid_val)
     
-    if outfile:    
-        savefig(outfile,dpi=200,bbox_inces="Tight")
+    
     
     if toplabel:
         autolabel(rects1)
+        
+    if outfile:    
+        savefig(outfile,dpi=200,bbox_inces="Tight")
     show()
 
 
