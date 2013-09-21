@@ -97,5 +97,5 @@ def Waterfall( df, xkcd=False, outfile = 'temp.png'):
     
 
 
-df = pandas.ExcelFile('../Downloads/test.xls').parse("Sheet1")
+df = pandas.ExcelFile('test.xls').parse("Sheet1")
 Waterfall( df )
