@@ -6,5 +6,5 @@ python:
 install:
     pip install pandas
     pip install numpy
-    pip install matplotlin
+    pip install matplotlib
 
