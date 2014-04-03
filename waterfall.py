@@ -2,7 +2,9 @@
 """
 Created on Wed Sep 18 21:25:24 2013
 
-@author: tobie
+simple waterfile chars
+
+@author: tobie nortje
 """
 import numpy as np
 from pylab import *
