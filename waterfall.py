@@ -18,7 +18,8 @@ def autolabel(rects):
              ha='right', va='bottom')
 
 
-def Waterfall(df,
+def Waterfall(values,
+              xtick_names,
               plot_title="Waterfall",
               plot_X="xname",
               plot_Y="yname",
@@ -41,8 +42,8 @@ def Waterfall(df,
 
     #currently the Excel header names = Rbn and Values
     #we need to fix this, remove the assignment and pass values and xticks
-    values = df['Rbn']
-    xtick_names = df['Values']
+    #values = df['Rbn']
+    #xtick_names = df['Values']
 
 
     #Some standard stuff. Also see last cell for custom css
@@ -114,7 +115,8 @@ def Waterfall(df,
 
     if outfile:
         savefig(outfile, dpi=200, bbox_inces="Tight")
-        #show()
+
+    show()
     return "OK"
 
 
@@ -122,4 +124,4 @@ if __name__ == "__main__":
     df = pandas.ExcelFile('test.xls').parse("Sheet1")
     values = df['Rbn']
     xtick_names = df['Values']
-    Waterfall(df, fig_size=(11, 6), xticks_fontsize=9, outfile="temp.png")
+    Waterfall(values, xtick_names, fig_size=(11, 6), xticks_fontsize=9, outfile="temp.png")
