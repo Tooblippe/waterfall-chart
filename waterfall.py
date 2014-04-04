@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Sep 18 21:25:24 2013
-simple waterfile chars
+    Matplotlib waterfall chart proof of concept
 
-@author: tobie nortje
 """
 import numpy as np
+
 from pylab import *
 from pandas import *
 
@@ -40,7 +39,8 @@ def Waterfall(df,
     if xkcd:
         plt.xkcd()
 
-    #currently the Excel header names = Rbn and Values 
+    #currently the Excel header names = Rbn and Values
+    #we need to fix this, remove the assignment and pass values and xticks
     values = df['Rbn']
     xtick_names = df['Values']
 
@@ -120,4 +120,6 @@ def Waterfall(df,
 
 if __name__ == "__main__":
     df = pandas.ExcelFile('test.xls').parse("Sheet1")
+    values = df['Rbn']
+    xtick_names = df['Values']
     Waterfall(df, fig_size=(11, 6), xticks_fontsize=9, outfile="temp.png")
