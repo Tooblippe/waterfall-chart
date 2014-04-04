@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """
+
     Matplotlib waterfall chart proof of concept
 
 """
