@@ -6,3 +6,4 @@ python:
 install:
     pip install pandas numpy matplotlib
 
+script: nosetests
