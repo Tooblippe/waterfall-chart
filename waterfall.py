@@ -114,7 +114,8 @@ def Waterfall(df,
 
     if outfile:
         savefig(outfile, dpi=200, bbox_inces="Tight")
-    show()
+        #show()
+    return "OK"
 
 
 if __name__ == "__main__":
