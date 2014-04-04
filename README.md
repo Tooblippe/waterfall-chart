@@ -1,6 +1,10 @@
 # waterfall.py
 
-Simple function that implements a waterfall chart in python. I have not  been able to find any decent implementation of a waterfall chart online and implementing it in Excel is neither trivial nor pretty. 
+[![Build Status](https://travis-ci.org/Tooblippe/waterfall.svg?branch=master)](https://travis-ci.org/Tooblippe/waterfall)
+
+--------------
+
+Simple function that implements a waterfall chart in python. I have not  been able to find any decent implementation of a waterfall chart online and implementing it in Excel is neither trivial nor pretty.
 
 #usage
 
