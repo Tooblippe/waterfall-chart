@@ -40,11 +40,6 @@ def Waterfall(values,
     if xkcd:
         plt.xkcd()
 
-    #currently the Excel header names = Rbn and Values
-    #we need to fix this, remove the assignment and pass values and xticks
-    #values = df['Rbn']
-    #xtick_names = df['Values']
-
 
     #Some standard stuff. Also see last cell for custom css
     import json
