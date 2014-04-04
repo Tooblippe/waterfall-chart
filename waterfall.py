@@ -17,7 +17,7 @@ def autolabel(rects):
         text(rect.get_x() + rect.get_width() / 2., 1.05 * height, '%d' % int(height),
              ha='right', va='bottom')
 
-
+#we need to turn this into an object still!
 def Waterfall(values,
               xtick_names,
               plot_title="Waterfall",
