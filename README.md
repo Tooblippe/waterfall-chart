@@ -10,7 +10,7 @@ Simple function that implements a waterfall chart in python. I have not  been ab
 
 This implementation is still very basic as I needed it fairly quickly
 
-It reads an Excel file into a pandas dataframe. YOu can obviously hard code your data.The file format currently is very simple. Some of the axis names and chart heading is still hard coded.
+An exmaple Excel file is provied and the demo reads an Excel file into a pandas DataFrame and passes the values and xtick names to the drawing function.
 
 Item  | Value
 -----  |  ------
@@ -26,8 +26,11 @@ Foo | 10
 Edit the following lines to point to an Excel file with the data. The waterfall() function is called with the parsed Excel file pandas dataframe.
 
 ```
-df = pandas.ExcelFile('test.xls').parse("Sheet1")
-Waterfall( df )
+    import pandas as pandas
+    df = pandas.ExcelFile('test.xls').parse("Sheet1")
+    values = df['Rbn']
+    xtick_names = df['Values']
+    Waterfall(values, xtick_names, fig_size=(11, 6), xticks_fontsize=9, outfile="temp.png")
 ```
 
 ![waterfall](https://raw.github.com/Tooblippe/waterfall/master/temp.png)
