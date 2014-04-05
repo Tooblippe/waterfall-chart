@@ -16,7 +16,7 @@
     <div class="wrapper">
       <header>
         <h1>waterfall.py</h1>
-        <p>A waterfall chart implementation in python and Excel DataNitro</p>
+        <p>A waterfall chart implementation in python</p>
 
         <p class="view"><a href="https://github.com/Tooblippe/waterfall">View the Project on GitHub <small>Tooblippe/waterfall</small></a></p>
 
@@ -31,14 +31,17 @@
         <h1>
 <a name="waterfallpy" class="anchor" href="#waterfallpy"><span class="octicon octicon-link"></span></a>waterfall.py</h1>
 
-<p>Simple function that implements a waterfall chart in python. I have not  been able to find any decent implementation of a waterfall chart online and implementing it in Excel is neither trivial nor pretty. </p>
+<p><a href="https://travis-ci.org/Tooblippe/waterfall"><img src="https://travis-ci.org/Tooblippe/waterfall.svg?branch=master" alt="Build Status"></a></p>
+
+<hr><p>Simple function that implements a waterfall chart in python.
+I have not  been able to find any decent implementation of a waterfall chart online and implementing it in Excel is neither trivial nor pretty.</p>
 
 <h1>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>usage</h1>
 
 <p>This implementation is still very basic as I needed it fairly quickly</p>
 
-<p>Ir reads an Excel file into a pandas dataframe. YOu can obviously hard code your data.The file format currently is very simple. Some of the axis names and chart heading is still hard coded. </p>
+<p>An exmaple Excel file is provided here (test.xls) and the demo reads an Excel file into a pandas DataFrame and passes the values and xtick names to the drawing function.</p>
 
 <table>
 <thead><tr>
@@ -81,8 +84,19 @@
 </tbody>
 </table><p>Edit the following lines to point to an Excel file with the data. The waterfall() function is called with the parsed Excel file pandas dataframe.</p>
 
-<pre><code>df = pandas.ExcelFile('test.xls').parse("Sheet1")
-Waterfall( df )
+<pre><code>    import pandas
+    import waterfall
+
+    df = pandas.ExcelFile('test.xls').parse("Sheet1")
+    values = df['Rbn']
+    xtick_names = df['Values']
+    Waterfall( values, xtick_names, fig_size = ( 11, 6 ), xticks_fontsize = 9, outfile = "temp.png")
+</code></pre>
+
+<p>or just run demo.py</p>
+
+<pre><code>    import waterfall
+    waterfall.demo('test.xls')
 </code></pre>
 
 <p><img src="https://raw.github.com/Tooblippe/waterfall/master/temp.png" alt="waterfall"></p>
@@ -91,14 +105,6 @@ Waterfall( df )
 <a name="custom-matplotlib" class="anchor" href="#custom-matplotlib"><span class="octicon octicon-link"></span></a>custom matplotlib</h1>
 
 <p>The function makes small modifications to the Matplotlib config file and also sets the default size to someting that should be easy to copy and paste to powerpoint.</p>
-
-<h1>
-<a name="implementing-in-datanitro" class="anchor" href="#implementing-in-datanitro"><span class="octicon octicon-link"></span></a>implementing in DataNitro</h1>
-
-<p>I am busy porting this to a <a href="https://datanitro.com/">DataNitro</a> function. This will mean that you would be able to create a chart in excel using the python extension and calling  something similar to the following in excel as you would call any normal Excel function:</p>
-
-<pre><code>= waterfall("A1:Ax,B1:Bx")
-</code></pre>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/Tooblippe">Tooblippe</a></p>
