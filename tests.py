@@ -1,7 +1,7 @@
 """
    Just starting out with tests for now.
 """
-e
+
 import pandas
 
 from waterfall import Waterfall
