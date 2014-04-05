@@ -35,7 +35,7 @@ Edit the following lines to point to an Excel file with the data. The waterfall(
     xtick_names = df['Values']
     Waterfall( values, xtick_names, fig_size = ( 11, 6 ), xticks_fontsize = 9, outfile = "temp.png")
 ```
-or fust run demo.py
+or just run demo.py
 
 ```
     import waterfall

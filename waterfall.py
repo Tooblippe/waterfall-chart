@@ -19,25 +19,25 @@ def autolabel(rects):
              ha='right', va='bottom')
 
 #we need to turn this into an object still!
-def Waterfall(values,
-              xtick_names,
-              plot_title="Waterfall",
-              plot_X="xname",
-              plot_Y="yname",
-              plot_line=True,
-              bar_color='#082583',
-              neg_color='red',
-              plc="g--",
-              plwidth=2,
-              fig_size=(15.5, 9),
-              tfont_size=25,
-              axfont_size=20,
-              bar_width=0.5,
-              xticks_fontsize=15,
-              grid_val=True,
-              xkcd=False,
-              toplabel=True,
-              outfile='temp.png'):
+def Waterfall(values, # values to plot
+              xtick_names, # x axis names
+              plot_title="Waterfall", # set plot title
+              plot_X="xname", # labels x axis
+              plot_Y="yname", # labels y axis
+              plot_line=True, # add a 'trend' line
+              bar_color='#082583', # set the bar color
+              neg_color='red', # color of a negative bar
+              plc="g--", # plot line style and color
+              plwidth=2, # plot width
+              fig_size=(15.5, 9), # figure size
+              tfont_size=25, # font size
+              axfont_size=20, # axis font size
+              bar_width=0.5, # width of the bar
+              xticks_fontsize=15, # fontsize of axis names
+              grid_val=True, # use grid
+              xkcd=False, # use xkcd type plot
+              toplabel=True, # add top label
+              outfile='temp.png'):          # filename to write the plot to
     if xkcd:
         plt.xkcd()
 
