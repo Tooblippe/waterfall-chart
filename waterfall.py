@@ -94,8 +94,8 @@ def Waterfall(values,
     ylabel(plot_Y, fontsize=axfont_size)
 
     rects1 = bar(xpos, sumvalues, align='center', width=bar_width, color=bar_color)
-    bar(xpos, blanks, color='#eeeeee', edgecolor='#eeeeee', align='center', width=bar_width)
 
+    bar(xpos, blanks, color='#eeeeee', edgecolor='#eeeeee', align='center', width=bar_width)
     bar(xpos, neg_h, align='center', width=bar_width, color=neg_color)
     bar(xpos, negblanks, color='#eeeeee', edgecolor='#eeeeee', align='center', width=bar_width)
 
@@ -116,8 +116,18 @@ def Waterfall(values,
     return "OK"
 
 
+def demo(exampleFile=''):
+    if not exampleFile:
+        exampleFile = 'test.xls'
+
+    try:
+        df = pandas.ExcelFile(exampleFile).parse("Sheet1")
+        values = df['Rbn']
+        xtick_names = df['Values']
+        Waterfall(values, xtick_names, fig_size=(11, 6), xticks_fontsize=9, outfile="temp.png")
+    except:
+        print "Error, please check if the example file is in the path"
+
+
 if __name__ == "__main__":
-    df = pandas.ExcelFile('test.xls').parse("Sheet1")
-    values = df['Rbn']
-    xtick_names = df['Values']
-    Waterfall(values, xtick_names, fig_size=(11, 6), xticks_fontsize=9, outfile="temp.png")
+    demo('test.xls')

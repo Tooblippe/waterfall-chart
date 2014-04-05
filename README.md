@@ -4,13 +4,14 @@
 
 --------------
 
-Simple function that implements a waterfall chart in python. I have not  been able to find any decent implementation of a waterfall chart online and implementing it in Excel is neither trivial nor pretty.
+Simple function that implements a waterfall chart in python.
+I have not  been able to find any decent implementation of a waterfall chart online and implementing it in Excel is neither trivial nor pretty.
 
 #usage
 
 This implementation is still very basic as I needed it fairly quickly
 
-An exmaple Excel file is provied and the demo reads an Excel file into a pandas DataFrame and passes the values and xtick names to the drawing function.
+An exmaple Excel file is provided here (test.xls) and the demo reads an Excel file into a pandas DataFrame and passes the values and xtick names to the drawing function.
 
 Item  | Value
 -----  |  ------
@@ -26,18 +27,24 @@ Foo | 10
 Edit the following lines to point to an Excel file with the data. The waterfall() function is called with the parsed Excel file pandas dataframe.
 
 ```
-    import pandas as pandas
+    import pandas
+    import waterfall
+
     df = pandas.ExcelFile('test.xls').parse("Sheet1")
     values = df['Rbn']
     xtick_names = df['Values']
-    Waterfall(values, xtick_names, fig_size=(11, 6), xticks_fontsize=9, outfile="temp.png")
+    Waterfall( values, xtick_names, fig_size = ( 11, 6 ), xticks_fontsize = 9, outfile = "temp.png")
 ```
+or fust run demo.py
+
+```
+    import waterfall
+    waterfall.demo('test.xls')
+```
+
 
 ![waterfall](https://raw.github.com/Tooblippe/waterfall/master/temp.png)
 
 # custom matplotlib
 The function makes small modifications to the Matplotlib config file and also sets the default size to someting that should be easy to copy and paste to powerpoint.
 
-
-
-```
