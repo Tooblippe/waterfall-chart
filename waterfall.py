@@ -113,7 +113,7 @@ def Waterfall( df,
     if outfile:    
         savefig(outfile,dpi=200,bbox_inces="Tight")
     show()
-
+    return "ok"
 
 if __name__ == "__main__":
     df = pandas.ExcelFile('test.xls').parse("Sheet1")
