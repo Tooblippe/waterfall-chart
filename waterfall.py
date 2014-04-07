@@ -10,7 +10,7 @@ from pylab import *
 from pandas import *
 
 
-def autolabel(rects):
+def _autolabel(rects):
     # attach some text labels
     #http://matplotlib.org/examples/api/barchart_demo.html
     for rect in rects:
@@ -107,7 +107,7 @@ def Waterfall(values, # values to plot
     grid(grid_val)
 
     if toplabel:
-        autolabel(rects1)
+        _autolabel(rects1)
 
     if outfile:
         savefig(outfile, dpi=200, bbox_inces="Tight")
