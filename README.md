@@ -48,3 +48,7 @@ or just run demo.py
 # custom matplotlib
 The function makes small modifications to the Matplotlib config file and also sets the default size to someting that should be easy to copy and paste to powerpoint.
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Tooblippe/waterfall/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
